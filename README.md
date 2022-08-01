@@ -46,3 +46,4 @@ To run this project on your localhost you should have python and Django setup in
 
 
 # HomePage: <br/>
+![projectlogo](https://user-images.githubusercontent.com/54074757/182212994-fbda3c5d-57bb-459e-8b68-6e1a2aa109b1.PNG)
