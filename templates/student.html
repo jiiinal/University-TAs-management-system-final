@@ -1,0 +1,99 @@
+{%extends 'basic.html' %}
+{%load static%}
+{%block content%}
+<style>
+button[type=button]
+{
+  align-items:right;
+}
+.notify{
+  margin: auto;
+  padding: 20px;
+}
+
+table, th, td {
+  border:2px solid black;
+  color:white;
+  padding:10px;
+
+}
+#t1{
+    margin-left:50px;
+    margin-right:0px;
+}
+a
+{
+  color:orange;
+}
+</style>
+
+    <div class="sidenav">
+      <a href="{% url 'cohome' %}">Home</a>
+        <a href="{% url 'addstudent' %}">Add Student</a>
+
+    </div>
+
+    <div class="main">
+      <div class="notify">
+
+        {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+        {% if message.tags %} {{message }} {% endif %}
+        {% endfor %}
+        </ul>
+        {% endif %}
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-5 table-responsive " >
+
+          <table id="t1" >
+            <th>Student Id</th>
+            <th>Student Name</th>
+            <th>Update</th>
+            <th>Delete</th>
+
+          {% for data in even_rec %}
+              <tr>
+              <td>{{data.sid}}</td>
+              <td>{{ data.name }}</td>
+              <td><a href="{% url 'updatestudent' data.id %}">Update</a></td>
+              <td><a href="{% url 'deletestudent' data.id %}">Delete</a></td>
+
+          {% endfor %}
+
+      </table>
+        </div>
+
+    <div class="col-md-4 table-responsive">
+      <table id="2">
+        <th>Student Id</th>
+        <th>Student Name</th>
+        <th>Update</th>
+        <th>Delete</th>
+
+      {% for data in odd_rec %}
+      <tr>
+      <td>{{data.sid}}</td>
+      <td>{{ data.name }}</td>
+      <td><a href="{% url 'updatestudent' data.id %}">Update</a></td>
+      <td><a href="{% url 'deletestudent' data.id %}">Delete</a></td>
+
+
+      {% endfor %}
+
+  </table>
+    </div>
+
+
+    </div>
+
+</div>
+
+
+
+</html>
+{%endblock%}

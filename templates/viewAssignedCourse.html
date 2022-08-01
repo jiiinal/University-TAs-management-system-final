@@ -1,0 +1,36 @@
+{% extends 'header.html' %}
+
+{% load static %}
+{% block mid %}
+<style>
+.mid ul {
+    font-size: large;
+    color: white;
+}
+</style>
+  <div class="main">
+  <div class="mid">
+      <p>{{message}}</p>
+<ul>
+
+    <li> Course: {{viewCourse.name}} [{{user.cid.courseid}}] </li>
+    <br>
+    <li> Faculty: {{fac.name}}</li>
+    <br>
+    <!-- <li> Year: {{user.year}} </li> -->
+    <!-- <li> Status: {{user.status}} </li> -->
+    <li> Your ratings: {{user.ratings}}/5</li>
+    <br>
+</ul>
+
+  </div>
+</div>
+{%endblock mid%}
+
+{%block sidenav%}
+    
+<div class="sidenav">
+  <a class="active" href="#">Profile</a>
+  <a href="{%url 'TAhome' user.id%}">Home</a>
+</div>
+{%endblock sidenav%}

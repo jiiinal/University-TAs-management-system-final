@@ -1,0 +1,70 @@
+{% extends 'header.html' %}
+
+{% load static %}
+{% block mid %}
+  <div class="main">
+  <div class="mid">
+      <div class="container" style="color: white;">  
+        <p>
+          <h1> List of TAs </h1>
+        </p>
+        <br/>
+        <form action="" method=POSt>
+          {%csrf_token%}
+          <table class="table table-dark table-bordered">
+          <thead>
+            <tr>
+              <th scope="col"><h3>TAs Information</h3></th>
+              <th scope="col"><h3>Give Preference</h3></th>
+            </tr>
+          </thead>
+          <tbody> 
+           
+            {% for ta in Listsee%}
+            {%if ta.status == 'Not Assigned'%}
+            <tr>
+              <td>
+            <strong>{{ta.name}} </strong>
+            <ul>
+            <li> EmailID: {{ta.mail}} </li>
+            <li> Stars: {{ta.star}} </li>
+            <li> Status: {{ta.status}} </li>
+        
+            </ul>
+          </td>
+          
+          <td>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value={{ta.id}} name="boxes"> 
+              <select name="selectTA" id="selectTA" style="color:black;">
+                {%for num in listofnum%}
+                        <option id="{{ta.id}}" value="{{num}}">{{num}}</option>
+                {%endfor%}
+              </select>
+            </div>
+
+
+        </td>
+          
+          {%endif%}  
+            {%endfor%}
+
+          </tbody>
+        </table>  
+<button class='btn btn-primary' tyoe="submit">
+    Submit Preferences
+</button>
+      </div>
+  </div>
+</div>
+{%endblock mid%}
+
+{%block sidenav%}
+    <div class="sidenav">
+      <a class="active" href="">Submit Preference</a>
+      <a href="{% url 'facultyHome' facid%}">Home</a>
+  </div>
+
+{%endblock sidenav%}
+
+

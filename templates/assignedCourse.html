@@ -1,0 +1,38 @@
+{% extends 'header.html' %}
+
+{% load static %}
+{% block mid %}
+<style>
+.mid li {
+  padding-left: 2%;
+  font-size: medium;
+  color: white;
+}
+</style>
+
+  <div class="main">
+  <div class="mid">
+      <!-- <p>Your course:</p> -->
+      {% for course in viewCourse %}
+      <p>Course: {{course.name}} [{{user.cid.courseid}}] {{course.program_year}}</p>
+      {%endfor%}
+      <br>
+  </div>
+</div>
+{%endblock mid%}
+
+{%block sidenav%}
+    <div class="sidenav">
+      <a class="active" href="">Assigned Course</a>
+      <a href="{% url 'facultyHome' user.id %}">Home</a>
+  </div>
+
+{%endblock sidenav%}
+
+<!-- 
+  if one professor assigned to more than one course thennnn....
+
+  {%for course in viewCourse%}
+      <li> Course: {{viewCourse.name}} [{{user.cid}}] </li>
+  {%endfor%}
+-->

@@ -1,0 +1,64 @@
+{% extends 'basic.html' %}
+{% load static %}
+{%block content%}
+<style>
+ .main {
+  margin-left: 250px; /* Same as the width of the sidenav */
+  width: 100%;
+  position: fixed;
+  background-color: rgb(122, 122, 122);
+  overflow: auto;
+  top: 60px;
+  bottom: 80px;
+  padding-inline-start: 0%;
+  padding-inline-end: 0%;
+}
+
+.mid{
+width: 76%;
+background-color: rgb(69, 69, 69);
+top: 60px;
+bottom: 80px;
+float: center;
+display: block;
+overflow: auto;
+margin-top: 2%;
+margin-left: 2%;
+height: auto;
+}
+
+.edit{
+  padding:10px;
+  color:white;
+  align:center;
+}
+
+.mid p{
+font-size:xx-large;
+padding: 30px;
+text-align: center;
+font-weight: bolder;
+color:white;
+}
+a{
+  color:orange;
+}
+</style>
+    <div class="sidenav">
+      <a href="{% url 'cohome' %}">Home</a>
+    </div>
+
+    {% block mid %}
+    <div class="main">
+      <div class="mid">
+        <div class="edit">
+          <h4 >Do you want to announce that process is completed?</h4>
+        <a href="{%url 'makeannounce' %}"><h4>Announce</h4></a>
+        </div>
+
+      </div>
+
+    </div>
+{%endblock mid%}
+
+{% endblock %}

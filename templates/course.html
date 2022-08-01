@@ -1,0 +1,108 @@
+{%extends 'basic.html' %}
+{%load static%}
+{%block content%}
+<style>
+button[type=button]
+{
+  text-align:right;
+  align-items: right;
+}
+.notify{
+  margin: auto;
+  padding: 20px;
+}
+
+table, th, td {
+  border:2px solid black;
+  color:white;
+  padding:10px;
+
+}
+#t1{
+    margin-left:50px;
+    margin-right:0px;
+}
+
+a
+{
+  color:orange;
+}
+
+.main {
+  margin-left:250px;
+  width: 100%;
+  position: fixed;
+  background-color: rgb(122, 122, 122);
+  overflow: auto;
+  top: 60px;
+  bottom: 80px;
+  padding-inline-start: 0%;
+  padding-inline-end: 0%;
+}
+
+</style>
+
+    <div class="sidenav">
+       <a href="{% url 'cohome' %}">Home</a>
+        <a href="{% url 'addcourse' %}">Add Course</a>
+
+    </div>
+
+    <div class="main" >
+      <div class="notify">
+
+        {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+        {% if message.tags %} {{message }} {% endif %}
+        {% endfor %}
+        </ul>
+        {% endif %}
+
+      </div>
+      <div class="row">
+
+        <div class="col-md-5 table-responsive " >
+
+          <table id="t1" >
+            <th>Course Name</th>
+            <th>Program and Year</th>
+            <th>Update</th>
+            <th>Delete</th>
+
+          {% for data in even_rec %}
+              <tr>
+              <td>{{ data.courseid }}</td>
+              <td>{{data.program_year}}</td>
+              <td><a href="{% url 'updatecourse' data.id %}">Update</a></td>
+              <td><a href="{% url 'deletecourse' data.id %}">Delete</a></td>
+
+          {% endfor %}
+
+      </table>
+        </div>
+
+    <div class="col-md-4 table-responsive">
+      <table id="2">
+        <th>Course Name</th>
+        <th>Program and Year</th>
+        <th>Update</th>
+        <th>Delete</th>
+
+      {% for data in odd_rec %}
+          <tr>
+          <td>{{ data.courseid }}</td>
+          <td>{{data.program_year}}</td>
+          <td><a href="{% url 'updatecourse' data.id %}">Update</a></td>
+          <td><a href="{% url 'deletecourse' data.id %}">Delete</a></td>
+
+      {% endfor %}
+
+  </table>
+    </div>
+
+      </div>
+
+    </div>
+
+{%endblock%}

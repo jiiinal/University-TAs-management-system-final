@@ -1,0 +1,70 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block content %}
+<style type="text/css" rel="stylesheet">
+  .body
+  {
+          display:flex;
+          align : center;
+          width: 100%;
+          margin: auto;
+          padding: 5px;
+          margin-top : 70px;
+          margin-bottom : 70px;
+          background-image: linear-gradient(to left, #717857, #B78787);
+          border : 2px solid black;
+          overflow:auto;
+          border-radius: 4px;
+  }
+
+  input, select {
+    width: auto;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .format{
+    display:flex;
+    flex-direction:column;
+    overflow:auto;
+    align-items:center;
+    margin:auto;
+  }
+
+  button[type=submit] {
+    width: 30%;
+    background-color: #ABFF50;
+    color: black;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+</style>
+<div class="body">
+  <h4>CSV file must be in below format and witout header. Mail,Password,Name,Batch,Studentid,Course1,Course2..</h4>
+     <form action="" method="POST" enctype="multipart/form-data" class="format" >
+            {% csrf_token %}
+              <!--{{form.as_table}}
+
+              <label for="file">Choose File</label>-->
+              <input name="file_csv" type="file" >
+              <button type="submit" name="submit" value="submit" >Submit</button>
+
+    </form>
+
+</div>
+                <!-- /.card -->
+
+
+{% endblock %}
+</html>

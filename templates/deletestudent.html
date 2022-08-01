@@ -1,0 +1,56 @@
+{%extends 'basic.html' %}
+{% load static %}
+{% block content %}
+<style>
+.body
+{
+      display:flex;
+      align : centre;
+        width: 40%;
+        margin: auto;
+        padding: 5px;
+        margin-top : 80px;
+        margin-bottom : 80px;
+        background-image: linear-gradient(to left, #717857, #B78787);
+        border : 2px solid black;
+        overflow:auto;
+}
+
+input, select {
+  width: 100%;
+  padding: 3px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  align:center;
+    overflow:auto;
+}
+
+button:hover{
+  background-color: #BBBBCD;
+    overflow:auto;
+}
+input[type=submit]:hover {
+  align:center;
+  background-color: #BBBBCD;
+    overflow:auto;
+}
+</style>
+
+<!-- Create a Form -->
+<div class="body">
+
+
+<h4 style="margin-left:2.5em">Do you want to delete this item ?</h4>
+
+
+<form method="POST" >
+  <!-- Security token by Django -->
+  {% csrf_token %}
+  <input type="submit" value="Yes" style="margin-left:2.5em"/>
+
+</form>
+</div>
+{% endblock %}

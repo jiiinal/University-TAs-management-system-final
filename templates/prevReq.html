@@ -1,0 +1,80 @@
+{% extends 'header.html' %}
+
+{% load static %}
+{% block mid %}
+<style>
+.mid ol {
+  font-size: large;
+  color: white;
+  width: 100%;
+}
+.text{
+  display: inline-block;
+}
+.h3{
+  display: inline-block;
+  text-decoration: underline;
+  font-size: larger;
+  color: rgb(173, 232, 212);
+}
+table, th, td {
+  border:2px solid black;
+  color:white;
+  padding:10px;
+
+}
+#t1{
+    margin-left:50px;
+    margin-right:0px;
+}
+a
+{
+  color:orange;
+}
+</style>
+  <div class="main">
+  <div class="mid">
+    <p>{{message}}</p>
+
+      <div class="table-responsive" style="margin:auto; padding-left:15%; font-size: medium;">
+        <table id="t1">
+          <th>Faculty</th>
+          <th>Month</th>
+          <th>Status</th>
+          <th>Remarks from Faculty</th>
+
+          {% for req in reqs%}
+            <tr>
+            <td>{{req.FacultyObj.name}}</td>
+            <td>{{req.Month}}</td>
+            <td>{{req.status}}</td>
+            <td></td>
+            <!-- <td>{{req.message}}</td> -->
+          {% endfor %}
+
+          </table>
+      </div>
+    <!-- <p style="border-bottom: 1px solid #00ffa6; width:fit-content; margin: auto;">{{message}}</p> 
+    <br>
+    -->
+    <!--
+    <ol>
+      {% for req in reqs%}
+      <li style="border-bottom: 1px solid #00ffa6; ">
+        <div class="text"> You have sent request to <div class="h3">'{{req.FacultyObj.name}}'</div> for <div class="h3">'{{req.Month}}'</div> month and the request status is: <div class="h3">{{req.status}}</div>.
+        </div>
+      </li>
+      {%endfor%}
+    </ol>
+  -->
+  <br>
+  </div>
+</div>
+{%endblock mid%}
+
+{%block sidenav%}
+<div class="sidenav">
+  <a class="active" href="">See previous requests</a>
+  <a href="{%url 'TAhome' taid%}">Home</a>
+</div>
+{%endblock sidenav%}

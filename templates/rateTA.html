@@ -1,0 +1,46 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block mid %}
+<style>
+.container{
+  margin: 20px auto;
+  width: 80%;
+  background-color:antiquewhite;
+
+  box-shadow: 0 0px 10px 0 rgba(255, 255, 255, 0.724);
+}
+.form-group{
+  color:black;
+}
+</style>
+<div class="main">
+  <div class="mid">
+    <!-- <p>Hiiii</p> -->
+    <p>{{message}}</p>
+    <div class="container">
+      <form method="POST" action="{% url 'rateTA' s.id%}" style="margin:30px 30px; color:white;">
+        {% csrf_token %}
+            <div class="form-group" style="padding:5px 0px; font-size:20px">
+                <label for="selectcourse">Select your course: </label>
+                <select name="selectcourse" id="selectcourse">
+                    {% for course in s.cid.all %}                        
+                                <option value="{{course.id}}">{{course.courseid}}</option>
+                    {% endfor %}
+                </select>
+            <div class="text-center">
+                <button type="submit" value="submit" style="background-color:#4882ff;">Go</button>
+            </div>
+             </div>
+      </form>
+      </div>
+  </div>
+</div>
+{%endblock mid%}
+
+{%block sidenav%}
+    <div class="sidenav">
+      <a class="active" href="">Rate your TA</a>
+      <a href="{% url 'studentHome' s.id%}">Home </a>
+  </div>
+
+{%endblock sidenav%}
