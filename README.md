@@ -25,12 +25,13 @@ Faculty Functionalities: <br/>
 * Faculty give preference to TAs for their course. <br/>
 * Faculty can logout from the system.<br/>
 
-<br/>TAs Functionalities: <br/>
+TAs Functionalities: <br/>
 * TAs can register themselves on the system.<br/>
 * TAs will be able to login & logout of system.<br/>
 * TAs is able to send a ‘Stipend request’ to their respective faculty.<br/>
 * TAs is able to see the status of their previous ‘Stipend request.’<br/>
 * TAs is able to see which professors they are assigned to.<br/>
+
 Students Functionalities: <br>
 * Students is able to login & logout of system. <br/>
 * Students is able to provide feedback to the TA at the end of the semester.
