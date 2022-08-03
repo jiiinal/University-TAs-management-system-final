@@ -1,4 +1,4 @@
-# TA-manangement-system-final
+# University-TAs-manangement-system (UTAMS)
 
 To run this project on your localhost you should have python and Django setup installed. Then run below commands. <br>
 -python manage.py makemigrations <br>
