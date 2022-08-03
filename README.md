@@ -14,8 +14,8 @@ Co-ordinator Functionalities:  <br/>
 * Co-ordinator is able to set the upper threshold number of TAs that any course can have. <br/>
 * Co-ordinator is able to assign TAs and also based on preference of professors. <br/>
 * Co-ordinator is able to update the list of TAs given to any faculty. <br/>
-* Co-ordinator is able to send a message to TA and faculty that all the processes are completed. <br/>
-Faculty Functionalities: <br/>
+* Co-ordinator is able to send a message to TA and faculty that all the processes are completed.
+<br/> Faculty Functionalities: <br/>
 * Faculty can register themselves on the system. <br/>
 * Faculty can login into the system. <br/>
 * Faculty can approve/approve with condition/disapprove the Stipend request of the TA. <br/>
@@ -33,9 +33,6 @@ Students Functionalities: <br>
 * Students is able to login & logout of system. <br/>
 * Students is able to provide feedback to the TA at the end of the semester.
 <br/>
-
-
-
 
 # HomePage: <br/>
 ![projectlogo](https://user-images.githubusercontent.com/54074757/182212994-fbda3c5d-57bb-459e-8b68-6e1a2aa109b1.PNG)
