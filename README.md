@@ -23,7 +23,8 @@ Co-ordinator Functionalities:  <br/>
 * Faculty can see the available list of TAs. <br/>
 * Faculty give preference to TAs for their course. <br/>
 * Faculty can logout from the system.<br/>
-TAs Functionalities: <br/>
+
+<br/>TAs Functionalities: <br/>
 * TAs can register themselves on the system.<br/>
 * TAs will be able to login & logout of system.<br/>
 * TAs is able to send a ‘Stipend request’ to their respective faculty.<br/>
