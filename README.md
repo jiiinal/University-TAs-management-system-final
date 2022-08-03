@@ -8,7 +8,6 @@ To run this project on your localhost you should have python and Django setup in
   <br>
  # Project Functionalities: <br/>
  <br/>Co-ordinator Functionalities:  <br/>
- <br/>
 * Co-ordinator is able to login & logout of system. <br/>
 * Co-ordinator is able to add/update/remove faculty and TAs. <br/>
 * Co-ordinator is able to add/update/remove Courses and students. <br/>
@@ -19,7 +18,6 @@ To run this project on your localhost you should have python and Django setup in
 <br/>
  
  <br/>Faculty Functionalities: <br/>
- <br/>
 * Faculty can register themselves on the system. <br/>
 * Faculty can login into the system. <br/>
 * Faculty can approve/approve with condition/disapprove the Stipend request of the TA. <br/>
@@ -30,7 +28,6 @@ To run this project on your localhost you should have python and Django setup in
 <br/>
 
 <br/>TAs Functionalities: <br/>
-<br/>
 * TAs can register themselves on the system.<br/>
 * TAs will be able to login & logout of system.<br/>
 * TAs is able to send a ‘Stipend request’ to their respective faculty.<br/>
@@ -39,7 +36,6 @@ To run this project on your localhost you should have python and Django setup in
 <br/>
 
 <br/>Students Functionalities: <br>
-<br/>
 * Students is able to login & logout of system. <br/>
 * Students is able to provide feedback to the TA at the end of the semester.
 <br/>
